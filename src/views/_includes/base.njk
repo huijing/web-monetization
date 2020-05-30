@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ renderData.title or title or metadata.title }}</title>
+    <meta name="description" content="{{ renderData.description or description or metadata.description }}">
+    <meta name="author" content="{{ metadata.author.name }}">
+
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/apple-touch-icon.png' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicons/favicon-32x32.png' | url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicons/favicon-16x16.png' | url }}">
+    <link rel="manifest" href="{{ '/assets/favicons/site.webmanifest' | url }}">
+    <link rel="mask-icon" href="{{ '/assets/favicons/safari-pinned-tab.svg' | url }}" color="#92cc49">
+    <meta name="msapplication-TileColor" content="#e8f3f8">
+    <meta name="theme-color" content="#e8f3f8">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="{{ css }}">
+    {{ content | safe }}
+
+    <footer>
+      <small>Design and code, <a href="https://chenhuijing.com">Chen Hui Jing</a></small>
+    </footer>
+    
+    <script src="{{ '/assets/js/scripts.js' | url }}"></script>
+  </body>
+</html>

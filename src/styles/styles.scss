@@ -1,0 +1,152 @@
+// Fonts
+@font-face {
+  font-family: 'Tommy Soft';
+  src: url('../fonts/tommy-light.woff2') format('woff2'),
+       url('../fonts/tommy-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tommy Soft';
+  src: url('../fonts/tommy-medium.woff2') format('woff2'),
+       url('../fonts/tommy-medium.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tommy Soft Title';
+  src: url('../fonts/tommy-bold.woff2') format('woff2'),
+       url('../fonts/tommy-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tommy Soft Outline';
+  src: url('../fonts/tommy-outline.woff2') format('woff2'),
+       url('../fonts/tommy-outline.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+$base-font: 'Tommy Soft', sans-serif;
+
+// Responsive typography
+$min-width: 320;
+$max-width: 1280;
+$min-font: 18;
+$max-font: 24;
+
+:root {
+  font-size: #{$min-font}px;
+}
+
+@media (min-width: #{$min-width}px) and (max-width: #{$max-width}px) {
+  :root {
+    font-size: calc( #{$min-font}px + (#{$max-font} - #{$min-font}) * ( (100vw - #{$min-width}px) / ( #{$max-width} - #{$min-width})));
+  }
+}
+
+@media (min-width: #{$max-width}px) {
+  :root {
+    font-size: #{$max-font}px;
+  }
+}
+
+// General styles
+:root {
+  --main: #e8f3f8;
+  --alt: #383838;
+  --accent: #c7f464;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: $base-font;
+  background-color: var(--main);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--alt);
+  padding: 1rem;
+
+  h1 {
+    margin: auto;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1.1;
+
+    span:first-child {
+      font-family: 'Tommy Soft Outline';
+      display: block;
+    }
+
+    span:nth-child(2) {
+      font-family: 'Tommy Soft Title';
+    }
+  }
+
+  img {
+    width: 40%;
+    min-width: 8em;
+    max-width: 14em;
+    margin: 1em auto;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  header {
+    span:nth-child(2) {
+      font-size: 150%;
+    }
+  }
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+footer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 85%;
+  padding: 0.25rem;
+}
+
+p {
+  line-height: 1.33;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}

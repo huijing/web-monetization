@@ -1,0 +1,15 @@
+{
+  "title": "A Guide to Web Monetization",
+  "url": "https://webmonetization.dev",
+  "description": "A resource for getting started with Web Monetization",
+  "feed": {
+    "subtitle": "A resource for getting started with Web Monetization",
+    "filename": "feed.xml",
+    "path": "/feed.xml",
+    "url": "https://webmonetization.dev/feed.xml",
+    "id": "https://webmonetization.dev/"
+  },
+  "author": {
+    "name": "Chen Hui Jing"
+  }
+}

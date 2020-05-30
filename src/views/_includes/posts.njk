@@ -1,0 +1,13 @@
+---
+layout: base.njk
+css: post
+---
+<main>
+  <a href="{{ '/' | url}}" class="home">
+    <img src="/assets/img/home.svg" alt="Home">
+  </a>
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+  <article>{{ content | safe }}</article>
+</main>
