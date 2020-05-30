@@ -11,7 +11,7 @@ import browserSync from 'browser-sync'
 
 // directories
 const SRC = 'src'
-const DIST = 'docs'
+const DIST = 'dist'
 
 // source file globs
 const SCRIPTS_GLOB = `${SRC}/scripts/**/*.js`

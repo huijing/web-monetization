@@ -12,6 +12,5 @@ npm-debug.log*
 .DS_Store
 
 # generated files
-.jekyll-metadata
 package-lock.json
-docs
+dist
