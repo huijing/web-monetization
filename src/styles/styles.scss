@@ -5,6 +5,7 @@
        url('../fonts/tommy-light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -13,6 +14,7 @@
        url('../fonts/tommy-medium.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -21,6 +23,7 @@
        url('../fonts/tommy-bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -29,9 +32,10 @@
        url('../fonts/tommy-outline.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
 }
 
-$base-font: 'Tommy Soft', sans-serif;
+$base-font: 'Tommy Soft', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
 
 // Responsive typography
 $min-width: 320;
@@ -60,6 +64,7 @@ $max-font: 24;
   --main: #e8f3f8;
   --alt: #383838;
   --accent: #c7f464;
+  --light-txt: #fff;
 }
 
 * {
@@ -93,12 +98,12 @@ header {
     line-height: 1.1;
 
     span:first-child {
-      font-family: 'Tommy Soft Outline';
+      font-family: 'Tommy Soft Outline', Arial Rounded MT Bold, Helvetica Rounded, Arial, sans-serif;
       display: block;
     }
 
     span:nth-child(2) {
-      font-family: 'Tommy Soft Title';
+      font-family: 'Tommy Soft Title', Arial Rounded MT Bold, Helvetica Rounded, Arial, sans-serif;
     }
   }
 
@@ -121,14 +126,55 @@ header {
 main {
   flex: 1;
   padding: 1rem;
+  max-width: 40rem;
+  margin: auto;
 }
 
 footer {
-  display: flex;
-  justify-content: end;
-  align-items: center;
+  display: block;
+  text-align: center;
   font-size: 85%;
-  padding: 0.25rem;
+  padding: 0.5rem;
+  background-color: var(--alt);
+  color: var(--light-txt);
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  li {
+    margin-right: 1rem;
+  }
+
+  a {
+    color: var(--accent);
+    border-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  footer {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    align-items: center;
+
+    ul {
+      margin-right: auto;
+    }
+
+    li {
+      margin-bottom: 0;
+    }
+  }
+}
+
+h2 {
+  margin-bottom: 0.5rem;
 }
 
 p {
@@ -144,6 +190,11 @@ li {
 a {
   color: currentColor;
   text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+
+a:hover {
+  border-bottom: 1px solid currentColor;
 }
 
 img,
