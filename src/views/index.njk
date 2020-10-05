@@ -33,5 +33,17 @@ css: front
 
   <h2>The How</h2>
 
-  <p>This section is WIP (๑•̀ㅂ•́)و✧</p>
+  <p>Currently, implementing web monetization on your site or application is a fairly straightforward process. To receive payments, you must have a digital wallet that supports the Interledger Protocol (ILP). At the moment, your options are <a href="https://gatehub.net/">Gatehub</a> or <a href="https://uphold.com/en-us/">Uphold</a>, but hopefully there will be more options moving forward.</p>
+
+  <p>Both of the aforementioned digital wallets will generate something called a payment pointer. It takes the following form (variation depending on your digital wallet of choice):</p>
+
+  <pre class="language-html"><code>$ilp-xxx.xxx/SOME_UNIQUE_IDENTIFIER</code></pre>
+
+  <p>This payment pointer is referenced in the <em>monetization</em> <code class="language-html">meta</code> tag which goes into the <code class="language-html">head</code> of your website or application. Do note that web monetization only works on secure pages served over HTTPS.</p>
+
+  <pre class="language-html"><code>&lt;meta name="monetization" content="$YourPaymentPointer" /&gt;</code></pre>
+
+  <p>But with that, you are set to receive payments from visitors who have an account or subscription with a web monetization provider, like <a href="https://coil.com/">Coil</a>. They also will need to install a web monetization agent (e.g. the Coil browser extension) on their browser with the necessary authorization for the provider to stream payments to you.</p>
+
+  <p>You can read more details in the <a href="https://webmonetization.org/specification.html">draft W3C specification on Web Monetization</a>, keeping in mind that this is very much a work in progress document.</p>
 </main>
