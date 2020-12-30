@@ -4,10 +4,12 @@ import plumber from 'gulp-plumber'
 import cp from 'child_process'
 
 import postcss from 'gulp-postcss'
-import sass from 'gulp-sass'
+import sass from '@selfisekai/gulp-sass'
 import prefix from 'autoprefixer'
 
 import browserSync from 'browser-sync'
+
+sass.compiler = require('sass')
 
 // directories
 const SRC = 'src'
